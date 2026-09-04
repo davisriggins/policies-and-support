@@ -121,7 +121,7 @@
 <body>
     <div class="container">
         <h1>Privacy Policy for Dwella</h1>
-        <p class="last-updated"><strong>Last Updated:</strong> November 9, 2025</p>
+        <p class="last-updated"><strong>Last Updated:</strong> September 1, 2026</p>
 
         <h2>Introduction</h2>
         <p>Welcome to Dwella ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, store, and protect your data when you use the Dwella mobile application (the "App").</p>
@@ -135,7 +135,7 @@
             <li><strong>Name</strong>: Your display name for identification within the app</li>
             <li><strong>Email Address</strong>: Used for account authentication and communication</li>
             <li><strong>Profile Picture</strong>: Optional image you upload to personalize your profile</li>
-            <li><strong>Authentication Data</strong>: Provided by Firebase Authentication when you sign in with Google</li>
+            <li><strong>Authentication Data</strong>: Your password is handled by Firebase Authentication and is never visible to us</li>
         </ul>
 
         <h3>2. Task and Household Data</h3>
@@ -145,13 +145,19 @@
             <li><strong>Household Information</strong>: Household names, invite codes, member lists, and household creation dates</li>
             <li><strong>Completion History</strong>: Records of when tasks are marked as complete</li>
             <li><strong>Room Data</strong>: Names of rooms you create for organizing tasks</li>
+            <li><strong>Grocery Lists</strong>: Item names, amounts, aisle categories, and whether an item has been ticked off</li>
+            <li><strong>Recipes</strong>: Titles, ingredients, method steps, servings, timings, and any source link you import from</li>
+            <li><strong>Meal Plans</strong>: Which recipes you have planned, on which days, for which meal, and for how many people</li>
         </ul>
+        <p><strong>Photographs of recipes are read on your device.</strong> When you add a recipe by photographing a page, the text is recognised locally on your iPhone and only the resulting recipe is saved. The photograph itself is never uploaded to us or to anyone else.</p>
+
 
         <h3>3. Usage Data</h3>
         <p>We may collect information about how you interact with the App, including:</p>
         <ul>
-            <li><strong>Device Information</strong>: Device type, operating system version</li>
-            <li><strong>App Performance Data</strong>: Crash reports and diagnostic information to improve app stability</li>
+            <li><strong>Device Information</strong>: Device type, operating system version, and app version</li>
+            <li><strong>Feature Usage</strong>: Which parts of the App are used and where people stop during setup, recorded against your household rather than against you personally, and describing the shape of an action rather than its content &mdash; see PostHog under Third-Party Services below</li>
+            <li><strong>Crash Reports</strong>: Technical information about where in our code a failure occurred, so we can fix it. Crash reports do not contain your content</li>
         </ul>
 
         <h3>4. Location Data</h3>
@@ -224,12 +230,25 @@
         <ul>
             <li><strong>Firebase Authentication</strong>: Secure user authentication and account management</li>
             <li><strong>Cloud Firestore</strong>: Cloud-based database for storing and syncing your data</li>
-            <li><strong>Firebase Services</strong>: App performance monitoring and crash reporting</li>
+            <li><strong>Firebase Cloud Functions</strong>: Server-side processing for household management</li>
         </ul>
         <p>Firebase's data practices are governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
 
-        <h3>Google Sign-In</h3>
-        <p>If you choose to sign in with Google, Google will share your basic profile information (name, email, profile picture) with Dwella. This is governed by <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+        <h3>RevenueCat</h3>
+        <p>We use RevenueCat to manage household subscriptions. RevenueCat receives your household identifier, your user identifier, and your purchase and subscription status. It does not receive your name, email address, or any of your household's content. RevenueCat's data practices are governed by <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat's Privacy Policy</a>.</p>
+
+        <h3>PostHog (Analytics and Crash Reporting)</h3>
+        <p>We use PostHog, hosted in the United States, to understand how Dwella is used and to be told when the app crashes. This helps us find problems and decide what to improve.</p>
+        <p>Analytics events are recorded against your <strong>household identifier</strong> rather than against you personally. What we send is limited to the shape of an action, not its content. For example:</p>
+        <ul>
+            <li>That a task was created, whether it repeats, and whether it was assigned &mdash; never the task's name or who it was assigned to</li>
+            <li>That a grocery item was added and which aisle category it fell into &mdash; never the item itself</li>
+            <li>That a recipe was saved, how it was added, and how many ingredients and steps it had &mdash; never the recipe's title or contents</li>
+            <li>Which screens in the app were reached, and where people stop during setup</li>
+        </ul>
+        <p><strong>We never send</strong> your name, other household members' names, your household's name, email addresses, invite codes, recipe titles, task names, grocery item names, or any note you write in the app.</p>
+        <p>If Dwella crashes, a crash report is sent so we can fix it. A crash report contains technical information about where in our code the failure happened. It does not contain your content.</p>
+        <p>We have disabled PostHog's location lookup, so no city, region, or approximate location is recorded. PostHog's data practices are governed by <a href="https://posthog.com/privacy" target="_blank">PostHog's Privacy Policy</a>.</p>
 
         <h2>Data Sharing and Disclosure</h2>
 
